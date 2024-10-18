@@ -1,11 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="style.css"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin: 20px;
+    }
+    .quantity {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+    }
+  </style>
 </head>
 <body>
-    <p>hello again</p>
+<div class="container">
+  <div class="quantity">Miqdor: <span id="quantity">0</span></div>
+  <button onclick="changeQuantity(4)">+4</button>
+  <button onclick="changeQuantity(5)">+5</button>
+  <button onclick="changeQuantity(-1)">Savatdan olib tashlash</button>
+  <button onclick="changeQuantity(-2)">-2</button>
+  <button onclick="changeQuantity(-3)">-3</button>
+</div>
+
+<script>
+  let quantity = 0;
+
+  function changeQuantity(amount) {
+    quantity += amount;
+    document.getElementById('quantity').innerText = quantity < 0 ? 0 : quantity;
+  }
+</script>
 </body>
 </html>
